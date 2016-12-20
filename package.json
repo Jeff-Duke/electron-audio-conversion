@@ -1,0 +1,32 @@
+{
+  "name": "h5-audio",
+  "version": "0.1.0",
+  "description": "A library for working with files for HTML5 audio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeff-Duke/h5-audio.git"
+  },
+  "keywords": [
+    "html5-audio",
+    "audio",
+    "id3"
+  ],
+  "author": "Ben Godfrey and Jeff Duke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jeff-Duke/h5-audio/issues"
+  },
+  "homepage": "https://github.com/Jeff-Duke/h5-audio#readme",
+  "dependencies": {
+    "dataurl": "^0.1.0",
+    "id3js": "^1.1.3",
+    "mp3-duration": "^1.0.10"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
