@@ -23,12 +23,14 @@
   "homepage": "https://github.com/Jeff-Duke/h5-audio#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "dataurl": "^0.1.0",
     "id3js": "^1.1.3",
     "mocha": "^3.2.0",
     "mp3-duration": "^1.0.10"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^3.2.0"
   }
 }

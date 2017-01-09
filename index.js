@@ -58,6 +58,7 @@ const createSongUri = (filePath, mimetype) => {
 };
 
 module.exports = {
+  getSongDuration,
   createSongUri,
   createSongObject
 };
