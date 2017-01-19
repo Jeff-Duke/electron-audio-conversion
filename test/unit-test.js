@@ -18,4 +18,12 @@ describe('file conversion process', () => {
      assert.eventually.equal(Promise.resolve(h5.getSongDuration('/Users/bcg/Desktop/Tracks/Salute.mp3')), 168.098, "This should return time in seconds").notify(done);
   });
 
+  it('should return a song\'s tags', (done) => {
+    //does not require duration, but will have it in our actual function because
+    //of how we are chainging promises
+    const track = { filePath: '/Users/bcg/Desktop/Tracks/Salute.mp3' }
+
+    expect(Promise.resolve(h5.getSongTags(track))).to.eventually.have.property('artist').notify(done)
+  });
+
 });
