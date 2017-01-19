@@ -26,4 +26,14 @@ describe('file conversion process', () => {
     expect(Promise.resolve(h5.getSongTags(track))).to.eventually.have.property('artist').notify(done)
   });
 
+  it('should return a song object', (done) => {
+     expect(Promise.resolve(h5.createSongObject('/Users/bcg/Desktop/Tracks/Salute.mp3'))).to.eventually.have.property('duration', 168.098)
+
+     expect(Promise.resolve(h5.createSongObject('/Users/bcg/Desktop/Tracks/Salute.mp3'))).to.eventually.have.property('artist', 'Future')
+
+     expect(Promise.resolve(h5.createSongObject('/Users/bcg/Desktop/Tracks/Salute.mp3'))).to.eventually.have.property('album', 'Purple Reign')
+
+     expect(Promise.resolve(h5.createSongObject('/Users/bcg/Desktop/Tracks/Salute.mp3'))).to.eventually.have.property('title', 'Salute\u0000').notify(done)
+  });
+
 });
