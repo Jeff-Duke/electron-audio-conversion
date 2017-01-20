@@ -17,11 +17,11 @@ describe('file conversion process', () => {
   });
 
   it('should return a song\'s tags', (done) => {
-    //does not require duration, but will have it in our actual function because
-    //of how we are chainging promises
+    //Function does not require duration, but it will present in our actual
+    //function because of how we are chaining promises. 
     const track = { filePath: filePath };
 
-    expect(Promise.resolve(h5.getSongTags(track))).to.eventually.have.property('artist').notify(done);
+    expect(Promise.resolve(h5.getSongTags(track))).to.eventually.have.property('artist', 'Future\u0000').notify(done);
   });
 
   it('should return a song object', (done) => {
