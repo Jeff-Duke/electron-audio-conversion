@@ -6,15 +6,7 @@ const fs = require('fs');
 const h5 = require('../index')
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
-const TEST_FILE = fs.readFileSync('/Users/bcg/Desktop/Tracks/Salute.mp3');
-const TEST_DATAURL = `data:audio/mp3;base64,${TEST_FILE.toString('base64')}`;
 chai.use(chaiAsPromised)
-
-describe('test bundle', () => {
-  it('should work', () => {
-    assert.equal();
-  });
-});
 
 describe('file conversion process', () => {
 
@@ -41,6 +33,9 @@ describe('file conversion process', () => {
   });
 
   it('should create a song url by converting to a dataurl', (done) => {
+    const TEST_FILE = fs.readFileSync('/Users/bcg/Desktop/Tracks/Salute.mp3');
+    const TEST_DATAURL = `data:audio/mp3;base64,${TEST_FILE.toString('base64')}`;
+
     assert.eventually.equal(Promise.resolve(h5.createSongUri('/Users/bcg/Desktop/Tracks/Salute.mp3', 'audio/mp3')), TEST_DATAURL, "This should return the same dataurl as or TEST_DATAURL variable").notify(done);
   })
 });
