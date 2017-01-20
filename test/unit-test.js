@@ -17,6 +17,7 @@ describe('test bundle', () => {
 });
 
 describe('file conversion process', () => {
+
   it('should get the song\'s duration', (done) => {
     return assert.eventually.equal(Promise.resolve(h5.getSongDuration('/Users/bcg/Desktop/Tracks/Salute.mp3')), 168.098, "This should return time in seconds").notify(done);
   });
@@ -40,6 +41,6 @@ describe('file conversion process', () => {
   });
 
   it('should create a song url by converting to a dataurl', (done) => {
-    assert.eventually.equal(Promise.resolve(h5.createSongUri('/Users/bcg/Desktop/Tracks/Salute.mp3', 'audio/mp3')), TEST_DATAURL, "This should return time in seconds").notify(done);
+    assert.eventually.equal(Promise.resolve(h5.createSongUri('/Users/bcg/Desktop/Tracks/Salute.mp3', 'audio/mp3')), TEST_DATAURL, "This should return the same dataurl as or TEST_DATAURL variable").notify(done);
   })
 });
