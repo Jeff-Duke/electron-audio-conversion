@@ -2,9 +2,12 @@ var expect = require('chai').expect;
 var assert = require('chai').assert;
 var should = require('chai').should;
 
+const fs = require('fs');
 const h5 = require('../index')
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
+const TEST_FILE = fs.readFileSync('/Users/bcg/Desktop/Tracks/Salute.mp3');
+const TEST_DATAURL = `data:audio/mp3;base64,${TEST_FILE.toString('base64')}`;
 chai.use(chaiAsPromised)
 
 describe('test bundle', () => {
@@ -15,7 +18,7 @@ describe('test bundle', () => {
 
 describe('file conversion process', () => {
   it('should get the song\'s duration', (done) => {
-     assert.eventually.equal(Promise.resolve(h5.getSongDuration('/Users/bcg/Desktop/Tracks/Salute.mp3')), 168.098, "This should return time in seconds").notify(done);
+    return assert.eventually.equal(Promise.resolve(h5.getSongDuration('/Users/bcg/Desktop/Tracks/Salute.mp3')), 168.098, "This should return time in seconds").notify(done);
   });
 
   it('should return a song\'s tags', (done) => {
@@ -36,4 +39,7 @@ describe('file conversion process', () => {
      expect(Promise.resolve(h5.createSongObject('/Users/bcg/Desktop/Tracks/Salute.mp3'))).to.eventually.have.property('title', 'Salute\u0000').notify(done)
   });
 
+  it('should create a song url by converting to a dataurl', (done) => {
+    assert.eventually.equal(Promise.resolve(h5.createSongUri('/Users/bcg/Desktop/Tracks/Salute.mp3', 'audio/mp3')), TEST_DATAURL, "This should return time in seconds").notify(done);
+  })
 });
