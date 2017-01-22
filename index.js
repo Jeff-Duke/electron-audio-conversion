@@ -1,12 +1,13 @@
 'use strict';
-const fs = require('fs');
-const dataurl = require('dataurl');
-const id3 = require('id3js');
-const mp3Duration = require('mp3-duration');
 
-const getSongDuration = (filePath) => {
-  const durationPromise = new Promise((resolve, reject) => {
-    mp3Duration(filePath, (err, duration) => {
+var fs = require('fs');
+var dataurl = require('dataurl');
+var id3 = require('id3js');
+var mp3Duration = require('mp3-duration');
+
+var getSongDuration = function getSongDuration(filePath) {
+  var durationPromise = new Promise(function (resolve, reject) {
+    mp3Duration(filePath, function (err, duration) {
       if (duration) {
         resolve(duration);
       }
@@ -18,16 +19,20 @@ const getSongDuration = (filePath) => {
   return durationPromise;
 };
 
-const getSongTags = (track) => {
-  const  { filePath }  = track;
-  const tagsPromise = new Promise((resolve, reject) => {
+var getSongTags = function getSongTags(track) {
+  var filePath = track.filePath;
+
+  var tagsPromise = new Promise(function (resolve, reject) {
     id3({
       file: filePath,
       type: id3.OPEN_LOCAL
-    }, (err, tags) => {
+    }, function (err, tags) {
       if (tags) {
-        const {title, album, artist} = tags;
-        Object.assign(track, {title, album, artist, track: tags.v1.track});
+        var title = tags.title,
+            album = tags.album,
+            artist = tags.artist;
+
+        Object.assign(track, { title: title, album: album, artist: artist, track: tags.v1.track });
         resolve(track);
       }
       if (err) {
@@ -38,28 +43,30 @@ const getSongTags = (track) => {
   return tagsPromise;
 };
 
-const createSongObject = (filePath) => {
-  const track = {};
-  return getSongDuration(filePath)
-    .then((duration) => Object.assign(track, {duration, filePath}))
-    .then((track) => getSongTags(track));
+var createSongObject = function createSongObject(filePath) {
+  var track = {};
+  return getSongDuration(filePath).then(function (duration) {
+    return Object.assign(track, { duration: duration, filePath: filePath });
+  }).then(function (track) {
+    return getSongTags(track);
+  });
 };
 
-const createSongUri = (filePath, mimetype) => {
-  const songPromise = new Promise((resolve, reject) => {
-    fs.readFile(filePath, (err, data) => {
+var createSongUri = function createSongUri(filePath, mimetype) {
+  var songPromise = new Promise(function (resolve, reject) {
+    fs.readFile(filePath, function (err, data) {
       if (err) {
         reject(err);
       }
-      resolve(dataurl.convert({data, mimetype}));
+      resolve(dataurl.convert({ data: data, mimetype: mimetype }));
     });
   });
   return songPromise;
 };
 
 module.exports = {
-  getSongDuration,
-  getSongTags,
-  createSongUri,
-  createSongObject
+  getSongDuration: getSongDuration,
+  getSongTags: getSongTags,
+  createSongUri: createSongUri,
+  createSongObject: createSongObject
 };
