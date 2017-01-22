@@ -21,19 +21,19 @@ describe('file conversion process', () => {
     expect(Promise.resolve(h5.getSongTags(track))).to.eventually.have.property('artist', 'Jingle Punks').notify(done);
   });
 
-  it('should return a song object with a duration of 157.205', (done) => {
+  it('should return a song object with a duration of 8.829', (done) => {
      expect(Promise.resolve(h5.createSongObject(filePath))).to.eventually.have.property('duration', 8.829).notify(done);
   });
 
-  it('should return a song object with an artist of Bensound', (done) => {
+  it('should return a song object with an artist of Jingle Punks', (done) => {
      expect(Promise.resolve(h5.createSongObject(filePath))).to.eventually.have.property('artist', 'Jingle Punks').notify(done);
   });
 
-  it('should return a song object with an album title of ROYALTY FREE MUSIC', (done) => {
+  it('should return a song object with an album title of Youtube Audio Library', (done) => {
      expect(Promise.resolve(h5.createSongObject(filePath))).to.eventually.have.property('album', 'YouTube Audio Library').notify(done);
   });
 
-  it('should return a song object with a track title of Acoustic-Breeze', (done) => {
+  it('should return a song object with a track title of Timed Out (Sting)', (done) => {
      expect(Promise.resolve(h5.createSongObject(filePath))).to.eventually.have.property('title', 'Timed Out (Sting)').notify(done);
   });
 
