@@ -1,7 +1,7 @@
 {
   "name": "h5-audio",
   "version": "0.1.0",
-  "description": "A library for working with files for HTML5 audio",
+  "description": "A promise-based library for loading audio files into HTML5 audio. Uses the dataurl, id3 and mp3duration libraries.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
