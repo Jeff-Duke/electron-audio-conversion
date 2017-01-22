@@ -4,7 +4,9 @@
   "description": "A library for working with files for HTML5 audio",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "babel src/media-conversion.js index.js",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,8 @@
     "mp3-duration": "^1.0.10"
   },
   "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "mocha": "^3.2.0"

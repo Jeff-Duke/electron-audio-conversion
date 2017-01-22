@@ -1,6 +1,6 @@
 const { assert, expect } = require('chai')
 const fs = require('fs');
-const h5 = require('../index');
+const h5 = require('../src/media-conversion');
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
