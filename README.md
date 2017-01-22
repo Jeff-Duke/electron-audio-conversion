@@ -6,9 +6,13 @@ A promise-based library for loading audio files into HTML5 audio.  Uses the data
 
 # Usage
 This library comes with 4 methods:
+
 `getSongDuration(filePath) ` -- Takes a filepath and returns the duration of that song.
+
 `getSongTags(track) ` -- Takes a track and returns the title, album and artist for that track.
+
 `createSongObject(filePath) ` -- Takes a filepath, creates a new object, calls `getSongDuration` and `getSongTags` and returns a promise with a song object that has the track, title, album and artist.  
+
 `createSongUri(filePath, mimetype) ` -- Takes a filepath and creates a dataUri for that file.  This dataUri is handed over to the HTML5 audio element to play the song.  
 
 # Why?
