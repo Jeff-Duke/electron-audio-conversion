@@ -4,7 +4,7 @@
   "description": "A library for working with files for HTML5 audio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
     "mp3-duration": "^1.0.10"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "mocha": "^3.2.0"
   }
 }

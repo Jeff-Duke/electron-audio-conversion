@@ -19,7 +19,7 @@ const getSongDuration = (filePath) => {
 };
 
 const getSongTags = (track) => {
-  const {filePath} = track;
+  const  { filePath }  = track;
   const tagsPromise = new Promise((resolve, reject) => {
     id3({
       file: filePath,
@@ -58,6 +58,8 @@ const createSongUri = (filePath, mimetype) => {
 };
 
 module.exports = {
+  getSongDuration,
+  getSongTags,
   createSongUri,
   createSongObject
 };
