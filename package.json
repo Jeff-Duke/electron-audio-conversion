@@ -18,9 +18,9 @@
   "author": "Ben Godfrey and Jeff Duke",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Jeff-Duke/h5-audio/issues"
+    "url": "https://github.com/Jeff-Duke/h5-audio-conversion/issues"
   },
-  "homepage": "https://github.com/Jeff-Duke/h5-audio#readme",
+  "homepage": "https://github.com/Jeff-Duke/h5-audio-conversion#readme",
   "dependencies": {
     "dataurl": "^0.1.0",
     "id3js": "^1.1.3",
