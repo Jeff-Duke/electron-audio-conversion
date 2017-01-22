@@ -1,5 +1,5 @@
 {
-  "name": "h5-audio",
+  "name": "h5-audio-conversion",
   "version": "0.1.0",
   "description": "A promise-based library for loading audio files into HTML5 audio. Uses the dataurl, id3 and mp3duration libraries.",
   "main": "index.js",
@@ -15,7 +15,8 @@
   "keywords": [
     "html5-audio",
     "audio",
-    "id3"
+    "id3",
+    "electron"
   ],
   "author": "Ben Godfrey and Jeff Duke",
   "license": "MIT",
