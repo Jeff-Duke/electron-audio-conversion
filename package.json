@@ -1,7 +1,7 @@
 {
-  "name": "h5-audio-conversion",
+  "name": "electron-audio-conversion",
   "version": "0.1.0",
-  "description": "A promise-based library for loading audio files into HTML5 audio. Uses the dataurl, id3 and mp3duration libraries.",
+  "description": "A promise-based library for loading audio files into HTML5 audio element in Electron. Uses the dataurl, id3 and mp3duration libraries.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jeff-Duke/h5-audio-conversion"
+    "url": "git+https://github.com/Jeff-Duke/electron-audio-conversion"
   },
   "keywords": [
     "html5-audio",
@@ -21,9 +21,9 @@
   "author": "Ben Godfrey and Jeff Duke",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Jeff-Duke/h5-audio-conversion/issues"
+    "url": "https://github.com/Jeff-Duke/electron-audio-conversion/issues"
   },
-  "homepage": "https://github.com/Jeff-Duke/h5-audio-conversion#readme",
+  "homepage": "https://github.com/Jeff-Duke/electron-audio-conversion#readme",
   "dependencies": {
     "dataurl": "^0.1.0",
     "id3js": "^1.1.3",
